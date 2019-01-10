@@ -1,0 +1,18 @@
+.game {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin: 200px auto;
+}
+
+.game-history-list {
+
+}
+
+.game-history-list-item {
+  cursor: pointer;
+}
+
+.game-history-list-item.active {
+  font-weight: 600;
+}
