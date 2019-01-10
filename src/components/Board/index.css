@@ -1,0 +1,9 @@
+.board {
+  width: 300px;
+  margin: 200px auto;
+}
+
+.board-row {
+  display: flex;
+  justify-content: space-between;
+}

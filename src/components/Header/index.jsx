@@ -1,7 +1,7 @@
 import React, { Component}  from 'react';
 import PropTypes from 'prop-types';
-import logo from '../../logo.svg';
-import './Header.css'
+import logo from '../../assets/images/logo.svg';
+import './index.css'
 
 export default class PublicHeader extends Component{
   static propTypes = {

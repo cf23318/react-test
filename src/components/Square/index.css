@@ -1,0 +1,9 @@
+.square {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border: 1px solid #ccc;
+  font-size: 30px;
+  text-align: center;
+}
