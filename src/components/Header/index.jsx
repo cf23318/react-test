@@ -16,8 +16,8 @@ export default class PublicHeader extends Component{
   };
 
   tick() {
-    this.setState((prveState) => ({
-      seconds: prveState.seconds + 1
+    this.setState((prevState) => ({
+      seconds: prevState.seconds + 1
     }))
   }
 

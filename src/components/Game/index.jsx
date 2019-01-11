@@ -6,6 +6,7 @@ import Board from '../Board'
 export default class Game extends Component{
   state = {
     stepNumber: 0,
+    reverse: false,
     history: [
       {
         squares: Array(9).fill(null),
@@ -58,17 +59,35 @@ export default class Game extends Component{
   }
 
   renderHistory() {
+    const list = this.state.history.map((info, index) => {
+      return (
+        <li
+          key={index}
+          className={cs(['game-history-list-item', index === this.state.stepNumber ? 'active' : ''])}
+          onClick={() => this.jumpTo(index)}
+        >
+          Move # {index} Game start
+        </li>
+      )
+    })
+
+    // 反转列表
+    if (this.state.reverse) {
+      list.reverse()
+    }
+
     return (
       <ul className="game-history-list">
-        {
-          this.state.history.map((info, index) => {
-            return (
-              <li key={index} className={cs(['game-history-list-item', index === this.state.stepNumber ? 'active' : ''])} onClick={() => this.jumpTo(index)}>Move # {index} Game start</li>
-            )
-          })
-        }
+        {list}
       </ul>
     )
+  }
+
+  handleReverse() {
+    console.log(this)
+    this.setState((prevState) => ({
+      reverse: !prevState.reverse
+    }))
   }
 
   render() {
@@ -87,6 +106,7 @@ export default class Game extends Component{
         </div>
 
         <div className="game-info">
+          <h2 className="game-info__reverse" onClick={() => this.handleReverse()}>reverse</h2>
           {this.renderHistory()}
         </div>
       </div>

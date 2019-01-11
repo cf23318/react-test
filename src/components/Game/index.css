@@ -16,3 +16,8 @@
 .game-history-list-item.active {
   font-weight: 600;
 }
+
+.game-info__reverse {
+  text-indent: 40px;
+  cursor: pointer;
+}
